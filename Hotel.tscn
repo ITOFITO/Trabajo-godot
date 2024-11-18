@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://cae8iiygng63f"]
+
+[ext_resource type="ArrayMesh" uid="uid://ii25eidugr8i" path="res://uploads_files_2776848_.blend.obj" id="2_foouk"]
+[ext_resource type="PackedScene" uid="uid://bheofaoavvlas" path="res://Tuberia/node_.tscn" id="3_chfyx"]
+[ext_resource type="PackedScene" uid="uid://baimwkdkpjc3d" path="res://Persona/Persona.tscn" id="3_hyacw"]
+[ext_resource type="Texture2D" uid="uid://biio7qpi811tb" path="res://Abandoned_House/Models/Abandoned_House_Alfombra1.png" id="3_tjdty"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktb46"]
+albedo_texture = ExtResource("3_tjdty")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Node3D2" parent="." instance=ExtResource("3_chfyx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.93895, 3.01125, 5.1249)
+
+[node name="Node3D" parent="." instance=ExtResource("3_hyacw")]
+transform = Transform3D(0.999996, 0, 0.00284494, 0, 1, 0, -0.00284494, 0, 0.999996, -6.03973, 4.11129, 0.199726)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.6459)
+material_override = SubResource("StandardMaterial3D_ktb46")
+mesh = ExtResource("2_foouk")
