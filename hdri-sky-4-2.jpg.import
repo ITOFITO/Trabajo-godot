@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbaa3kw2kot51"
-path.s3tc="res://.godot/imported/Alfombra2.png-a8bee8c0eb4a0fcc10099dd09454d3ca.s3tc.ctex"
+uid="uid://t54jgr30hn27"
+path="res://.godot/imported/hdri-sky-4-2.jpg-e757372e61fcbbadc9329185486378d8.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Abandoned_House/Textures/Alfombra2.png"
-dest_files=["res://.godot/imported/Alfombra2.png-a8bee8c0eb4a0fcc10099dd09454d3ca.s3tc.ctex"]
+source_file="res://hdri-sky-4-2.jpg"
+dest_files=["res://.godot/imported/hdri-sky-4-2.jpg-e757372e61fcbbadc9329185486378d8.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

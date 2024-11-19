@@ -15,8 +15,8 @@ func _ready():
 
 func _process(delta):
 	# Detectar si se presiona la tecla '1' usando la acción definida en el Input Map
-	if Input.is_action_just_pressed("key_1"):  # Usamos la acción 'key_1'
-		print("Tuberia 1 esta fallando")  # Para depuración
+	if Input.is_action_just_pressed("key_3"):  # Usamos la acción 'key_1'
+		print("Tuberia 3 esta fallando")  # Para depuración
 		var material = tube.material_override  # Acceder al material del MeshInstance3D
 		
 		# Verificamos si el material es un StandardMaterial3D
