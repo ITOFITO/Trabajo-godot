@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://baimwkdkpjc3d" path="res://Persona/Persona.tscn" id="3_hyacw"]
 [ext_resource type="Texture2D" uid="uid://biio7qpi811tb" path="res://Abandoned_House/Models/Abandoned_House_Alfombra1.png" id="3_tjdty"]
 [ext_resource type="Texture2D" uid="uid://curflfdif7p5q" path="res://descarga.jpg" id="5_b315t"]
-[ext_resource type="PackedScene" uid="uid://cxkdrxjrwle4r" path="res://HUD/Camara2.tscn" id="5_e4cuc"]
 [ext_resource type="PackedScene" uid="uid://bc573uvipl234" path="res://Tuberia/node2_.tscn" id="7_otgau"]
+[ext_resource type="PackedScene" uid="uid://6sb2qd0i0kk1" path="res://HUD/HUD.tscn" id="8_rsmol"]
 [ext_resource type="PackedScene" uid="uid://bwptkv5ctf1sb" path="res://Tuberia/node3_.tscn" id="8_xhd71"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktb46"]
@@ -52,7 +52,8 @@ handle_input_locally = false
 size = Vector2i(200, 200)
 render_target_update_mode = 4
 
-[node name="Camera3D" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_e4cuc")]
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -24.8118, -332.635, 13.0965)
 
 [node name="Tuberia2" parent="." instance=ExtResource("7_otgau")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -16.3101, 16.4361, 33.0057)
@@ -62,3 +63,6 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -15.3984, 26.0996, 33.0855)
 
 [node name="Node3D" parent="." instance=ExtResource("3_hyacw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4796, 3.11777, 8.53051)
+
+[node name="Node3D2" parent="." instance=ExtResource("8_rsmol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.2618, -354.255, 11.8075)

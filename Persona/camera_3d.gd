@@ -24,13 +24,13 @@ func _process(delta):
 	var move_dir = Vector3.ZERO
 
 	# Movimiento con las teclas
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("up"):
 		move_dir.z -= 1
-	if Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("down"):
 		move_dir.z += 1
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("left"):
 		move_dir.x -= 1
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("right"):
 		move_dir.x += 1
 
 	# Normalizamos el vector de movimiento
