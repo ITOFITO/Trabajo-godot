@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://6sb2qd0i0kk1"]
+[gd_scene load_steps=7 format=3 uid="uid://6sb2qd0i0kk1"]
 
 [ext_resource type="PackedScene" uid="uid://bheofaoavvlas" path="res://Tuberia/node_.tscn" id="1_bpeea"]
 [ext_resource type="PackedScene" uid="uid://bc573uvipl234" path="res://Tuberia/node2_.tscn" id="2_icdsd"]
 [ext_resource type="PackedScene" uid="uid://bwptkv5ctf1sb" path="res://Tuberia/node3_.tscn" id="3_ry7is"]
+[ext_resource type="PackedScene" uid="uid://cxkdrxjrwle4r" path="res://HUD/Camara2.tscn" id="4_0pw4l"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ter3n"]
 size = Vector2(100, 100)
@@ -10,9 +11,6 @@ size = Vector2(100, 100)
 [sub_resource type="TextMesh" id="TextMesh_ut1su"]
 
 [node name="Node3D" type="Node3D"]
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.042608, 0.999092, 0, -0.999092, -0.042608, 0, 13.4443, 0)
 
 [node name="Mapa" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_ter3n")
@@ -28,3 +26,6 @@ transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0.0783
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("TextMesh_ut1su")
+
+[node name="Node3D" parent="." instance=ExtResource("4_0pw4l")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0550675, 8.54441, 0.316258)
