@@ -1,31 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://6sb2qd0i0kk1"]
+[gd_scene load_steps=5 format=3 uid="uid://6sb2qd0i0kk1"]
 
-[ext_resource type="PackedScene" uid="uid://bheofaoavvlas" path="res://Tuberia/node_.tscn" id="1_bpeea"]
-[ext_resource type="PackedScene" uid="uid://bc573uvipl234" path="res://Tuberia/node2_.tscn" id="2_icdsd"]
-[ext_resource type="PackedScene" uid="uid://bwptkv5ctf1sb" path="res://Tuberia/node3_.tscn" id="3_ry7is"]
-[ext_resource type="PackedScene" uid="uid://cxkdrxjrwle4r" path="res://HUD/Camara2.tscn" id="4_0pw4l"]
+[ext_resource type="Texture2D" uid="uid://76mugaj8fu1e" path="res://HUD/plain-black-color-background-blank-260nw-2246094767.webp" id="1_doean"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ter3n"]
-size = Vector2(100, 100)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0w1nf"]
+albedo_texture = ExtResource("1_doean")
+
+[sub_resource type="BoxMesh" id="BoxMesh_h4333"]
 
 [sub_resource type="TextMesh" id="TextMesh_ut1su"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="Mapa" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_ter3n")
-
-[node name="Tubo1" parent="." instance=ExtResource("1_bpeea")]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0.0377373, 0, 4.0248)
-
-[node name="Tubo 2" parent="." instance=ExtResource("2_icdsd")]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0.0425922, 0, -1.1925)
-
-[node name="Tubo 3" parent="." instance=ExtResource("3_ry7is")]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0.0783592, 0, -6.31773)
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_0w1nf")
+mesh = SubResource("BoxMesh_h4333")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("TextMesh_ut1su")
-
-[node name="Node3D" parent="." instance=ExtResource("4_0pw4l")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0550675, 8.54441, 0.316258)

@@ -1,19 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://cae8iiygng63f"]
+[gd_scene load_steps=9 format=3 uid="uid://cae8iiygng63f"]
 
-[ext_resource type="Texture2D" uid="uid://bi0o67eiq3f2u" path="res://Texture/ladrillo.jpg" id="2_0leej"]
-[ext_resource type="ArrayMesh" uid="uid://cginjotbwik83" path="res://hotel/uploads_files_2776848_.blend.obj" id="2_foouk"]
-[ext_resource type="PackedScene" uid="uid://bheofaoavvlas" path="res://Tuberia/node_.tscn" id="3_chfyx"]
+[ext_resource type="PackedScene" uid="uid://btc7rds241rxq" path="res://hotel/uploads_files_5618904_HorrorScene.tscn" id="3_bkehg"]
 [ext_resource type="PackedScene" uid="uid://baimwkdkpjc3d" path="res://Persona/Persona.tscn" id="3_hyacw"]
-[ext_resource type="Material" uid="uid://6pjr12yu574o" path="res://Texture/Brick1.tres" id="4_y87xj"]
 [ext_resource type="Texture2D" uid="uid://curflfdif7p5q" path="res://descarga.jpg" id="5_b315t"]
-[ext_resource type="PackedScene" uid="uid://bc573uvipl234" path="res://Tuberia/node2_.tscn" id="7_otgau"]
 [ext_resource type="PackedScene" uid="uid://6sb2qd0i0kk1" path="res://HUD/HUD.tscn" id="8_rsmol"]
-[ext_resource type="PackedScene" uid="uid://bwptkv5ctf1sb" path="res://Tuberia/node3_.tscn" id="8_xhd71"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jfrgv"]
-albedo_texture = ExtResource("2_0leej")
-
-[sub_resource type="Skin" id="Skin_18xy0"]
+[sub_resource type="BoxMesh" id="BoxMesh_1d7om"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jb073"]
 panorama = ExtResource("5_b315t")
@@ -27,59 +19,25 @@ sky = SubResource("Sky_np5ga")
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Tuberia1" parent="." instance=ExtResource("3_chfyx")]
-transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -16.115, 2.70235, 33.0554)
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31396, -0.0580816, 13.6306)
-material_override = SubResource("StandardMaterial3D_jfrgv")
-mesh = ExtResource("2_foouk")
-skin = SubResource("Skin_18xy0")
-surface_material_override/0 = ExtResource("4_y87xj")
-surface_material_override/1 = ExtResource("4_y87xj")
-surface_material_override/2 = ExtResource("4_y87xj")
-surface_material_override/3 = ExtResource("4_y87xj")
-surface_material_override/4 = ExtResource("4_y87xj")
-surface_material_override/5 = ExtResource("4_y87xj")
-surface_material_override/6 = ExtResource("4_y87xj")
-surface_material_override/7 = ExtResource("4_y87xj")
-surface_material_override/8 = ExtResource("4_y87xj")
-surface_material_override/9 = ExtResource("4_y87xj")
-surface_material_override/10 = ExtResource("4_y87xj")
-surface_material_override/11 = ExtResource("4_y87xj")
-surface_material_override/12 = ExtResource("4_y87xj")
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, -1, 0)
+mesh = SubResource("BoxMesh_1d7om")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_qn00s")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = -200.0
-grow_horizontal = 0
-grow_vertical = 0
-stretch = true
+[node name="pasillo" parent="." instance=ExtResource("3_bkehg")]
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+[node name="estudiante" parent="." instance=ExtResource("3_hyacw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0703111, 1.14206, 24.1774)
+
+[node name="Node3D" parent="." instance=ExtResource("8_rsmol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 46.6585, 0)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Node3D"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="Node3D/SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(200, 200)
 render_target_update_mode = 4
-
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -24.8118, -332.635, 13.0965)
-
-[node name="Tuberia2" parent="." instance=ExtResource("7_otgau")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -16.3101, 16.4361, 33.0057)
-
-[node name="Tuberia3" parent="." instance=ExtResource("8_xhd71")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -15.3984, 26.0996, 33.0855)
-
-[node name="Node3D" parent="." instance=ExtResource("3_hyacw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4796, 3.11777, 8.53051)
-
-[node name="Node3D2" parent="." instance=ExtResource("8_rsmol")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.2618, -354.255, 11.8075)

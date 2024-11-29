@@ -1,4 +1,4 @@
-extends Camera3D
+extends Node3D
 
 @export var move_speed : float = 10.0  # Velocidad de movimiento
 @export var sensitivity : float = 0.2  # Sensibilidad del ratón
