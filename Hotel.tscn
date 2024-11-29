@@ -1,16 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://cae8iiygng63f"]
+[gd_scene load_steps=11 format=3 uid="uid://cae8iiygng63f"]
 
 [ext_resource type="ArrayMesh" uid="uid://cginjotbwik83" path="res://uploads_files_2776848_.blend.obj" id="2_foouk"]
 [ext_resource type="PackedScene" uid="uid://bheofaoavvlas" path="res://Tuberia/node_.tscn" id="3_chfyx"]
 [ext_resource type="PackedScene" uid="uid://baimwkdkpjc3d" path="res://Persona/Persona.tscn" id="3_hyacw"]
-[ext_resource type="Texture2D" uid="uid://biio7qpi811tb" path="res://Abandoned_House/Models/Abandoned_House_Alfombra1.png" id="3_tjdty"]
 [ext_resource type="Texture2D" uid="uid://curflfdif7p5q" path="res://descarga.jpg" id="5_b315t"]
 [ext_resource type="PackedScene" uid="uid://bc573uvipl234" path="res://Tuberia/node2_.tscn" id="7_otgau"]
 [ext_resource type="PackedScene" uid="uid://6sb2qd0i0kk1" path="res://HUD/HUD.tscn" id="8_rsmol"]
 [ext_resource type="PackedScene" uid="uid://bwptkv5ctf1sb" path="res://Tuberia/node3_.tscn" id="8_xhd71"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktb46"]
-albedo_texture = ExtResource("3_tjdty")
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jb073"]
 panorama = ExtResource("5_b315t")
@@ -29,7 +25,6 @@ transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -16.115, 2.70235, 33.0554)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.6459)
-material_override = SubResource("StandardMaterial3D_ktb46")
 mesh = ExtResource("2_foouk")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
