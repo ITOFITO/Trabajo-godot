@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://csgbt7vthk3lw"]
+
+[ext_resource type="Texture2D" uid="uid://cnyilwt2346y1" path="res://Tuberia/pipe_3_pipe_big_3_pipe_big_3_Diffuse.png" id="1_u5n08"]
+[ext_resource type="Texture2D" uid="uid://djnhwmk2p0db6" path="res://Tuberia/pipe_3_pipe_big_3_pipe_big_3_Glossiness.png" id="2_juyk3"]
+[ext_resource type="Texture2D" uid="uid://d3mcrh1u4dlf4" path="res://Tuberia/pipe_3_pipe_big_3_pipe_big_3_Normal.png" id="3_w1mv5"]
+
+[resource]
+resource_name = "pipe_big_3"
+cull_mode = 2
+albedo_texture = ExtResource("1_u5n08")
+metallic_texture = ExtResource("2_juyk3")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_juyk3")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_w1mv5")

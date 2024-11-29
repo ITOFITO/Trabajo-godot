@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cae8iiygng63f"]
+[gd_scene load_steps=8 format=3 uid="uid://cae8iiygng63f"]
 
 [ext_resource type="PackedScene" uid="uid://btc7rds241rxq" path="res://hotel/uploads_files_5618904_HorrorScene.tscn" id="3_bkehg"]
 [ext_resource type="PackedScene" uid="uid://baimwkdkpjc3d" path="res://Persona/Persona.tscn" id="3_hyacw"]
 [ext_resource type="Texture2D" uid="uid://curflfdif7p5q" path="res://descarga.jpg" id="5_b315t"]
-[ext_resource type="PackedScene" uid="uid://6sb2qd0i0kk1" path="res://HUD/HUD.tscn" id="8_rsmol"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1d7om"]
 
@@ -20,7 +19,7 @@ sky = SubResource("Sky_np5ga")
 [node name="Node3D" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, -1, 0)
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, -1, -0.233992)
 mesh = SubResource("BoxMesh_1d7om")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -30,14 +29,3 @@ environment = SubResource("Environment_qn00s")
 
 [node name="estudiante" parent="." instance=ExtResource("3_hyacw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0703111, 1.14206, 24.1774)
-
-[node name="Node3D" parent="." instance=ExtResource("8_rsmol")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 46.6585, 0)
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Node3D"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="SubViewport" type="SubViewport" parent="Node3D/SubViewportContainer"]
-handle_input_locally = false
-render_target_update_mode = 4
