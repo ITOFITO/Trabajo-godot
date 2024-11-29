@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b25xaoptggy3n"]
+
+[ext_resource type="Script" path="res://Tuberia/Tuberiacodigo/node_4_.gd" id="1_f78uq"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_00uer"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." node_paths=PackedStringArray("mesh_instance")]
+mesh = SubResource("CylinderMesh_00uer")
+script = ExtResource("1_f78uq")
+mesh_instance = NodePath(".")

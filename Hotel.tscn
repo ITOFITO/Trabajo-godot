@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cae8iiygng63f"]
+[gd_scene load_steps=9 format=3 uid="uid://cae8iiygng63f"]
 
 [ext_resource type="PackedScene" uid="uid://btc7rds241rxq" path="res://hotel/uploads_files_5618904_HorrorScene.tscn" id="3_bkehg"]
-[ext_resource type="PackedScene" uid="uid://baimwkdkpjc3d" path="res://Persona/Persona.tscn" id="3_hyacw"]
+[ext_resource type="PackedScene" uid="uid://6sb2qd0i0kk1" path="res://HUD/HUD.tscn" id="4_hxwin"]
+[ext_resource type="Script" path="res://Persona/player.gd" id="4_qeik7"]
 [ext_resource type="Texture2D" uid="uid://curflfdif7p5q" path="res://descarga.jpg" id="5_b315t"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1d7om"]
@@ -27,5 +28,17 @@ environment = SubResource("Environment_qn00s")
 
 [node name="pasillo" parent="." instance=ExtResource("3_bkehg")]
 
-[node name="estudiante" parent="." instance=ExtResource("3_hyacw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0703111, 1.14206, 24.1774)
+[node name="Node3D" parent="." instance=ExtResource("4_hxwin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28.4107, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 51.241, 9.25627)
+script = ExtResource("4_qeik7")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]

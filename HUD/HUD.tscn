@@ -1,20 +1,47 @@
-[gd_scene load_steps=5 format=3 uid="uid://6sb2qd0i0kk1"]
+[gd_scene load_steps=12 format=3 uid="uid://6sb2qd0i0kk1"]
 
 [ext_resource type="Texture2D" uid="uid://76mugaj8fu1e" path="res://HUD/plain-black-color-background-blank-260nw-2246094767.webp" id="1_doean"]
+[ext_resource type="PackedScene" uid="uid://c56gdioyradww" path="res://Tuberia/TuberiasModelo/T1.tscn" id="3_4yvc7"]
+[ext_resource type="PackedScene" uid="uid://ex2tpwpvnank" path="res://Tuberia/TuberiasModelo/T2.tscn" id="4_2qg5e"]
+[ext_resource type="PackedScene" uid="uid://2l4i2jh2rw6e" path="res://Tuberia/TuberiasModelo/T3.tscn" id="5_avent"]
+[ext_resource type="PackedScene" uid="uid://b25xaoptggy3n" path="res://Tuberia/TuberiasModelo/T4.tscn" id="6_sjp5k"]
+[ext_resource type="PackedScene" uid="uid://c84pi223m0xrt" path="res://Tuberia/TuberiasModelo/T5.tscn" id="7_l2tiq"]
+[ext_resource type="PackedScene" uid="uid://bo3qkjgb8y2ym" path="res://Tuberia/TuberiasModelo/T6.tscn" id="8_o7xel"]
+[ext_resource type="PackedScene" uid="uid://bckda8ql5ymi6" path="res://Tuberia/TuberiasModelo/T7.tscn" id="9_ecaba"]
+[ext_resource type="PackedScene" uid="uid://dfabft6hw8jjm" path="res://Tuberia/TuberiasModelo/T8.tscn" id="10_0h6lb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0w1nf"]
 albedo_texture = ExtResource("1_doean")
 
 [sub_resource type="BoxMesh" id="BoxMesh_h4333"]
 
-[sub_resource type="TextMesh" id="TextMesh_ut1su"]
-
 [node name="Node3D" type="Node3D"]
 
 [node name="Mapa" type="MeshInstance3D" parent="."]
-transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0)
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, -11.123, 0.1195, -0.052125)
 material_override = SubResource("StandardMaterial3D_0w1nf")
 mesh = SubResource("BoxMesh_h4333")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("TextMesh_ut1su")
+[node name="Node3D" parent="." instance=ExtResource("3_4yvc7")]
+transform = Transform3D(1, 0, 0, 0, -1.74846e-07, -1, 0, 4, -4.37114e-08, 5.79559, 1.43681, 19.7475)
+
+[node name="Node3D2" parent="." instance=ExtResource("4_2qg5e")]
+transform = Transform3D(1, 0, 0, 0, -1.74846e-07, -1, 0, 4, -4.37114e-08, 5.796, 1.437, 10.4689)
+
+[node name="Node3D3" parent="." instance=ExtResource("5_avent")]
+transform = Transform3D(1, 0, 0, 0, -1.5299e-07, -1, 0, 3.5, -4.37114e-08, 5.796, 1.437, 0.375)
+
+[node name="Node3D4" parent="." instance=ExtResource("6_sjp5k")]
+transform = Transform3D(1, 0, 0, 0, -1.74846e-07, -1, 0, 4, -4.37114e-08, 5.796, 1.437, -9.18951)
+
+[node name="Node3D5" parent="." instance=ExtResource("7_l2tiq")]
+transform = Transform3D(1, 0, 0, 0, -2.18557e-07, -1, 0, 5, -4.37114e-08, -5.84587, 1.44608, 18.3763)
+
+[node name="Node3D6" parent="." instance=ExtResource("8_o7xel")]
+transform = Transform3D(1, 0, 0, 0, -1.5299e-07, -1, 0, 3.5, -4.37114e-08, -5.846, 1.446, 9.278)
+
+[node name="Node3D7" parent="." instance=ExtResource("9_ecaba")]
+transform = Transform3D(1, 0, 0, 0, -1.74846e-07, -1, 0, 4, -4.37114e-08, -5.846, 1.446, 0.757631)
+
+[node name="Node3D8" parent="." instance=ExtResource("10_0h6lb")]
+transform = Transform3D(1, 0, 0, 0, -1.74846e-07, -1, 0, 4, -4.37114e-08, -5.846, 1.446, -8.39165)
