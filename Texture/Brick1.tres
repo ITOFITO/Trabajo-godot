@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://6pjr12yu574o"]
+
+[ext_resource type="Texture2D" uid="uid://bdw84eqr2avy3" path="res://Nueva carpeta/textrues/Brick_wall_03_2K_Base_Color.png" id="1_agyvu"]
+
+[resource]
+albedo_texture = ExtResource("1_agyvu")

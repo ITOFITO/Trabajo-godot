@@ -1,12 +1,19 @@
-[gd_scene load_steps=11 format=3 uid="uid://cae8iiygng63f"]
+[gd_scene load_steps=15 format=3 uid="uid://cae8iiygng63f"]
 
-[ext_resource type="ArrayMesh" uid="uid://cginjotbwik83" path="res://uploads_files_2776848_.blend.obj" id="2_foouk"]
+[ext_resource type="Texture2D" uid="uid://bi0o67eiq3f2u" path="res://Texture/ladrillo.jpg" id="2_0leej"]
+[ext_resource type="ArrayMesh" uid="uid://cginjotbwik83" path="res://hotel/uploads_files_2776848_.blend.obj" id="2_foouk"]
 [ext_resource type="PackedScene" uid="uid://bheofaoavvlas" path="res://Tuberia/node_.tscn" id="3_chfyx"]
 [ext_resource type="PackedScene" uid="uid://baimwkdkpjc3d" path="res://Persona/Persona.tscn" id="3_hyacw"]
+[ext_resource type="Material" uid="uid://6pjr12yu574o" path="res://Texture/Brick1.tres" id="4_y87xj"]
 [ext_resource type="Texture2D" uid="uid://curflfdif7p5q" path="res://descarga.jpg" id="5_b315t"]
 [ext_resource type="PackedScene" uid="uid://bc573uvipl234" path="res://Tuberia/node2_.tscn" id="7_otgau"]
 [ext_resource type="PackedScene" uid="uid://6sb2qd0i0kk1" path="res://HUD/HUD.tscn" id="8_rsmol"]
 [ext_resource type="PackedScene" uid="uid://bwptkv5ctf1sb" path="res://Tuberia/node3_.tscn" id="8_xhd71"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jfrgv"]
+albedo_texture = ExtResource("2_0leej")
+
+[sub_resource type="Skin" id="Skin_18xy0"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jb073"]
 panorama = ExtResource("5_b315t")
@@ -24,8 +31,23 @@ sky = SubResource("Sky_np5ga")
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -16.115, 2.70235, 33.0554)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.6459)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31396, -0.0580816, 13.6306)
+material_override = SubResource("StandardMaterial3D_jfrgv")
 mesh = ExtResource("2_foouk")
+skin = SubResource("Skin_18xy0")
+surface_material_override/0 = ExtResource("4_y87xj")
+surface_material_override/1 = ExtResource("4_y87xj")
+surface_material_override/2 = ExtResource("4_y87xj")
+surface_material_override/3 = ExtResource("4_y87xj")
+surface_material_override/4 = ExtResource("4_y87xj")
+surface_material_override/5 = ExtResource("4_y87xj")
+surface_material_override/6 = ExtResource("4_y87xj")
+surface_material_override/7 = ExtResource("4_y87xj")
+surface_material_override/8 = ExtResource("4_y87xj")
+surface_material_override/9 = ExtResource("4_y87xj")
+surface_material_override/10 = ExtResource("4_y87xj")
+surface_material_override/11 = ExtResource("4_y87xj")
+surface_material_override/12 = ExtResource("4_y87xj")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_qn00s")
