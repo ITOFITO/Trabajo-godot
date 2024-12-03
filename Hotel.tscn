@@ -1,9 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://cae8iiygng63f"]
+[gd_scene load_steps=14 format=3 uid="uid://cae8iiygng63f"]
 
 [ext_resource type="PackedScene" uid="uid://btc7rds241rxq" path="res://hotel/uploads_files_5618904_HorrorScene.tscn" id="3_bkehg"]
 [ext_resource type="PackedScene" uid="uid://6sb2qd0i0kk1" path="res://HUD/HUD.tscn" id="4_hxwin"]
-[ext_resource type="Script" path="res://Persona/player.gd" id="4_qeik7"]
 [ext_resource type="Texture2D" uid="uid://curflfdif7p5q" path="res://descarga.jpg" id="5_b315t"]
+[ext_resource type="PackedScene" uid="uid://dbysurm2v8gei" path="res://Tuberia/tuberia1.glb" id="5_usx8w"]
+[ext_resource type="PackedScene" uid="uid://pm51pkiqho27" path="res://Texture/Baño/Bath_fbx.FBX" id="6_rigaj"]
+[ext_resource type="PackedScene" uid="uid://cfw2qewra4rwo" path="res://Texture/Baño/Sink_fbx.FBX" id="7_8ig4y"]
+[ext_resource type="PackedScene" uid="uid://baipkjaekaamj" path="res://Texture/Baño/Towel_Rail_fbx.FBX" id="8_rk87e"]
+[ext_resource type="PackedScene" uid="uid://cf0dq6hi7oykq" path="res://Texture/Baño/Toilet+Paper_fbx.FBX" id="9_lyblw"]
+[ext_resource type="PackedScene" uid="uid://bc24c5tlu7lv6" path="res://Player.tscn" id="10_il081"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1d7om"]
 
@@ -19,6 +24,9 @@ sky = SubResource("Sky_np5ga")
 
 [node name="Node3D" type="Node3D"]
 
+[node name="Toilet+Paper_fbx2" parent="." instance=ExtResource("9_lyblw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.11511, 0.10071, -0.975137)
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, -1, -0.233992)
 mesh = SubResource("BoxMesh_1d7om")
@@ -31,14 +39,109 @@ environment = SubResource("Environment_qn00s")
 [node name="Node3D" parent="." instance=ExtResource("4_hxwin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28.4107, 0)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 51.241, 9.25627)
-script = ExtResource("4_qeik7")
-
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = -1
+anchor_left = 0.775
+anchor_top = 0.603
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.199951
+offset_top = 0.255981
+offset_right = 253.0
+offset_bottom = 255.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.270761, 51.9557, 3.10668)
+
+[node name="Label" type="Label" parent="SubViewportContainer/SubViewport"]
+offset_left = 1.0
+offset_top = 50.0
+offset_right = 81.0
+offset_bottom = 73.0
+scale = Vector2(2, 2)
+text = "TUBERIA 8
+
+
+TUBERIA 7
+
+TUBERIA 6
+
+TUBERIA 5"
+
+[node name="Label2" type="Label" parent="SubViewportContainer/SubViewport"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "                                                                                       TUBERIA 4
+                                                                                      
+
+                                                                                      TUBERIA 3
+
+
+TUBERIA 2"
+
+[node name="tuberia1" parent="." instance=ExtResource("5_usx8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.17599, 0, 16.2686)
+
+[node name="Bath_fbx" parent="." instance=ExtResource("6_rigaj")]
+transform = Transform3D(0.0197558, 0, 0.999805, 0, 1, 0, -0.999805, 0, 0.0197558, 7.65113, 0, 8.90222)
+
+[node name="Sink_fbx" parent="." instance=ExtResource("7_8ig4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.27421, -1.19209e-07, 12.7458)
+
+[node name="Towel_Rail_fbx" parent="." instance=ExtResource("8_rk87e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2734, 0, 15.6463)
+
+[node name="tuberia2" parent="." instance=ExtResource("5_usx8w")]
+transform = Transform3D(-0.999639, 0, -0.0268748, 0, 1, 0, 0.0268748, 0, -0.999639, 5.58813, -2.38419e-07, 14.609)
+
+[node name="Sink_fbx2" parent="." instance=ExtResource("7_8ig4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.25763, 0, 11.5833)
+
+[node name="Toilet+Paper_fbx" parent="." instance=ExtResource("9_lyblw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.14301, 0, 7.73587)
+
+[node name="tuberia3" parent="." instance=ExtResource("5_usx8w")]
+transform = Transform3D(0.0662042, 0, -0.997806, 0, 1, 0, 0.997806, 0, 0.0662042, 7.69093, 0, 0.36288)
+
+[node name="Node3D2" parent="." instance=ExtResource("10_il081")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.208053, 1.20592, 25.8671)
+
+[node name="Sink_fbx3" parent="." instance=ExtResource("7_8ig4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.09036, 0, 18.7537)
+
+[node name="Sink_fbx4" parent="." instance=ExtResource("7_8ig4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.15, 0, 3.17864)
+
+[node name="Bath_fbx2" parent="." instance=ExtResource("6_rigaj")]
+transform = Transform3D(1.51732, 0, 0, 0, 1, 0, 0, 0, 1.88833, 6.71778, 0, -12.3692)
+
+[node name="Sink_fbx5" parent="." instance=ExtResource("7_8ig4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.26478, 0, -9.10643)
+
+[node name="Toilet+Paper_fbx3" parent="." instance=ExtResource("9_lyblw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.22852, 0, -6.77695)
+
+[node name="Towel_Rail_fbx2" parent="." instance=ExtResource("8_rk87e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.19551, 0, -8.68443)
+
+[node name="tuberia4" parent="." instance=ExtResource("5_usx8w")]
+transform = Transform3D(0.0698087, 0, -0.99756, 0, 1, 0, 0.99756, 0, 0.0698087, 7.67931, 0, -5.48468)
+
+[node name="tuberia5" parent="." instance=ExtResource("5_usx8w")]
+transform = Transform3D(0.0402364, 0, 0.99919, 0, 1, 0, -0.99919, 0, 0.0402364, -8.11074, 0, -8.75388)
+
+[node name="tuberia6" parent="." instance=ExtResource("5_usx8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.67954, 0, -3.15519)
+
+[node name="tuberia7" parent="." instance=ExtResource("5_usx8w")]
+transform = Transform3D(0.0611705, 0, 0.998127, 0, 1, 0, -0.998127, 0, 0.0611705, -7.93516, 0, 8.70031)
+
+[node name="tuberia8" parent="." instance=ExtResource("5_usx8w")]
+transform = Transform3D(-0.00338594, 0.99999, -0.00300191, 0, 0.00300193, 0.999996, 0.999994, 0.00338592, -1.01643e-05, -8.73001, 0, 18.4867)
