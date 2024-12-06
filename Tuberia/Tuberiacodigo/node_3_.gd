@@ -45,7 +45,7 @@ func _process(delta):
 			# El retraso ha terminado, la tubería empieza a fallar
 			is_damaged = true
 			is_blinking = true  # Iniciar el parpadeo automáticamente
-			print("¡La tubería está fallando ahora!")
+			print("¡La tubería 3 está fallando ahora!")
 
 			# Mostrar mensaje de fallo aleatorio
 			var random_message = failure_messages[randi() % failure_messages.size()]  # Seleccionar un mensaje aleatorio
@@ -58,7 +58,7 @@ func _process(delta):
 		# Si la tubería está dañada, activamos o desactivamos el parpadeo
 		if is_damaged:
 			is_blinking = true  # Iniciar el parpadeo
-			print("la tubería 3 tiene grandes probabilidades de fallar...")
+			print("¡La tubería 3 está fallando!")
 			
 			# Mostrar mensaje de fallo aleatorio
 			var random_message = failure_messages[randi() % failure_messages.size()]  # Seleccionar un mensaje aleatorio
