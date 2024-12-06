@@ -1,8 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://bc24c5tlu7lv6"]
+[gd_scene load_steps=5 format=3 uid="uid://bc24c5tlu7lv6"]
 
 [ext_resource type="Script" path="res://Persona/player.gd" id="1_d26bn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2aepp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k8emu"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_7ymfh"]
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_d26bn")
 
 [node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.53126, 0)
+cull_mask = 1048573
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_2aepp")
+skeleton = NodePath("CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D"]
+shape = SubResource("BoxShape3D_k8emu")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.023, 0, 0, 0, 2.446, 0, 0, 0, 3, 0, 32.0374, 0)
+mesh = SubResource("SphereMesh_7ymfh")
+skeleton = NodePath("../Camera3D")

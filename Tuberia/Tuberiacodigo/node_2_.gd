@@ -8,6 +8,9 @@ var is_damaged: bool = false  # Variable de estado para saber si la tubería est
 var is_blinking: bool = false  # Controla si el parpadeo está activado o desactivado
 var blink_timer: float = 0.0  # Temporizador para el parpadeo
 var blink_interval: float = 0.5  # Intervalo de tiempo entre parpadeos
+var failure_delay_timer: float = 0.0  # Temporizador para el retraso antes de que la tubería falle
+var failure_delay: float = 10.0  # 10 segundos de retraso antes de fallar
+var has_warning_shown: bool = false  # Controla si el mensaje de advertencia ha sido mostrado
 
 var failure_messages: Array = [
 	"¡La tubería tiene mucha presión!",
@@ -28,7 +31,26 @@ func _ready():
 	if material and material is StandardMaterial3D:
 		material.albedo_color = original_color
 
+	# Probabilidad de que la tubería empiece a fallar sola (40%)
+	if randi() % 100 < 40:  # randi() genera un número aleatorio entre 0 y un valor muy grande, usamos el módulo 100 para tener un rango entre 0 y 99
+		print("la tubería 2 tiene grandes probabilidades de fallar...")
+		failure_delay_timer = failure_delay  # Iniciamos el temporizador de 10 segundos
+		has_warning_shown = true  # Indicamos que el mensaje de advertencia ya fue mostrado
+
 func _process(delta):
+	# Si estamos esperando el retraso antes de que la tubería falle
+	if failure_delay_timer > 0.0:
+		failure_delay_timer -= delta  # Reducimos el temporizador
+		if failure_delay_timer <= 0.0:
+			# El retraso ha terminado, la tubería empieza a fallar
+			is_damaged = true
+			is_blinking = true  # Iniciar el parpadeo automáticamente
+			print("¡La tubería está fallando ahora!")
+
+			# Mostrar mensaje de fallo aleatorio
+			var random_message = failure_messages[randi() % failure_messages.size()]  # Seleccionar un mensaje aleatorio
+			print(random_message)
+
 	# Detectamos si la tecla '1' fue presionada
 	if Input.is_action_just_pressed("key_2"):  # Usamos la acción 'key_1'
 		is_damaged = !is_damaged  # Alternamos el estado de la tubería
@@ -46,7 +68,7 @@ func _process(delta):
 			var material = mesh_instance.material_override
 			if material and material is StandardMaterial3D:
 				material.albedo_color = original_color  # Restauramos el color original
-			print("¡La tubería 2 está en buen estado!")
+			print("¡La tubería está 2 en buen estado!")
 
 		# Reiniciamos el temporizador cuando se presiona la tecla
 		blink_timer = 0.0
