@@ -23,16 +23,16 @@ material_override = SubResource("StandardMaterial3D_0w1nf")
 mesh = SubResource("BoxMesh_h4333")
 
 [node name="Node3D" parent="." instance=ExtResource("3_4yvc7")]
-transform = Transform3D(1, 0, 0, 0, -1.74846e-07, -1, 0, 4, -4.37114e-08, 5.79559, 1.43681, 19.7475)
+transform = Transform3D(1.25, 0, 0, 0, -2.18557e-07, -1.25, 0, 5, -5.46392e-08, 5.79559, 1.43681, 19.132)
 
 [node name="Node3D2" parent="." instance=ExtResource("4_2qg5e")]
-transform = Transform3D(1, 0, 0, 0, -1.74846e-07, -1, 0, 4, -4.37114e-08, 5.796, 1.437, 10.4689)
+transform = Transform3D(1, 0, 0, 0, -1.74846e-07, -1, 0, 4, -4.37114e-08, 5.796, 1.437, 9.79186)
 
 [node name="Node3D3" parent="." instance=ExtResource("5_avent")]
-transform = Transform3D(1, 0, 0, 0, -1.5299e-07, -1, 0, 3.5, -4.37114e-08, 5.796, 1.437, 0.375)
+transform = Transform3D(1.143, 0, 0, 0, -1.74846e-07, -1.143, 0, 4, -4.99621e-08, 5.796, 1.437, 1.46361)
 
 [node name="Node3D4" parent="." instance=ExtResource("6_sjp5k")]
-transform = Transform3D(1, 0, 0, 0, -1.74846e-07, -1, 0, 4, -4.37114e-08, 5.796, 1.437, -9.18951)
+transform = Transform3D(1.25, 0, 0, 0, -2.18557e-07, -1.25, 0, 5, -5.46392e-08, 5.796, 1.437, -8.11915)
 
 [node name="Node3D5" parent="." instance=ExtResource("7_l2tiq")]
 transform = Transform3D(1, 0, 0, 0, -2.18557e-07, -1, 0, 5, -4.37114e-08, -5.84587, 1.44608, 18.3763)

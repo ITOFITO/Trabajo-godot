@@ -76,15 +76,29 @@ TUBERIA 6
 TUBERIA 5"
 
 [node name="Label2" type="Label" parent="SubViewportContainer/SubViewport"]
-offset_right = 40.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
 offset_bottom = 23.0
-text = "                                                                                       TUBERIA 4
-                                                                                      
+grow_horizontal = 0
+text = "         
+      
+                    
+   TUBERIA 1
 
-                                                                                      TUBERIA 3
+
+  TUBERIA 3 
 
 
-TUBERIA 2"
+
+
+TUBERIA 2
+
+
+
+
+TUBERIA 1"
 
 [node name="tuberia1" parent="." instance=ExtResource("5_usx8w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.17599, 0, 16.2686)
